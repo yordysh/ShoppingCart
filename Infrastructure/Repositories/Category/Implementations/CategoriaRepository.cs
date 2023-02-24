@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories.Category.Implementations
 {
-    public class CategoryRepository : ICategoryRepository
+    public class CategoriaRepository : ICategoriaRepository
     {
         private readonly ApplicationDbContext _context;
-        public CategoryRepository(ApplicationDbContext context)
+        public CategoriaRepository(ApplicationDbContext context)
         {
             _context= context;
         }
