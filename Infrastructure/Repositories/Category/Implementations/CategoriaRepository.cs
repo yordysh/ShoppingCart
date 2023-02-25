@@ -15,7 +15,7 @@ namespace Infrastructure.Repositories.Category.Implementations
         private readonly ApplicationDbContext _context;
         public CategoriaRepository(ApplicationDbContext context)
         {
-            _context= context;
+            _context = context;
         }
         //public async Task<IList<Categoria>> FindAll()
         //{
@@ -23,8 +23,11 @@ namespace Infrastructure.Repositories.Category.Implementations
         //    return response;
         //}
         public async Task<IList<Categoria>> FindAll()
-         => await _context.Categorias.OrderByDescending(c => c.Id).ToListAsync();
-         
-        
+        {
+
+            var response = await _context.Categorias.OrderByDescending(c => c.Id).ToListAsync();
+            return response;
+
+        }
     }
 }

@@ -19,9 +19,10 @@ namespace Application.Services.Category.Implementations
             _mapper= mapper;
             _categoriaRepository= categoriaRepository;
         }
-        public Task<IList<CategoriaDto>> FindAll()
+        public async Task<IList<CategoriaDto>> FindAll()
         {
-            throw new NotImplementedException();
+            var response = await _categoriaRepository.FindAll();
+            return _mapper.Map<IList<CategoriaDto>>(response);
         }
     }
 }
